@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.dao.UserMapper">
+    <select id="findById" resultType="com.qf.pojo.State">
+        select * from state where id=#{id};
+    </select>
+    <update id="updateById" parameterType="com.qf.pojo.State">
+        update state set path=#{path}
+    </update>
+    <select id="findUrl" resultType="string">
+        SELECT path from state where  id = #{id}
+    </select>
+</mapper>

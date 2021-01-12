@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.ArticleMapper">
+  <resultMap id="baseResult" type="com.qf.pojo.States">
+    <result property="name" column="name"></result>
+    <result property="stateDiscuss" column="state_discuss"></result>
+  </resultMap>
+  <select id="findById" resultMap="baseResult">
+SELECT userinfo.name, discuss.state_discuss from discuss,userinfo,state where discuss.state_id=state.id and discuss.user_id=userinfo.id and userinfo.id=#{id}
+  </select>
+</mapper>

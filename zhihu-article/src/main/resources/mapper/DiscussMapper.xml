@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.DiscussMapper">
+    <resultMap id="base" type="com.qf.pojo.Discuss">
+        <id property="id" column="id"></id>
+        <result property="userId" column="user_id"></result>
+        <result property="stateId" column="state_id"></result>
+        <result property="stateDiscuss" column="state_discuss"></result>
+    </resultMap>
+    <delete id="deleteById">
+        delete from discuss where state_id = #{id}
+    </delete>
+    <insert id="insertDiscuss">
+        insert into discuss (id,user_id,state_id,state_discuss) values(null,#{userId},#{stateId},#{stateDiscuss})
+    </insert>
+</mapper>
